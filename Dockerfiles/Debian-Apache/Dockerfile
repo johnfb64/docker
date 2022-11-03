@@ -2,7 +2,7 @@
 FROM debian:latest
 #Cada RUN es una capa, aqui se ejecutan dos instalaciones en una misma capa. 
 # -y es para que a todo le diga SI. 
-RUN apt update && apt install -y apache
+RUN apt update && apt install -y httpd
 # WORKDIR = Establece directorio de trabajo en imagen que se esta creando:
 WORKDIR /var/www/html
 # COPY copia el contenido deseado. - # . -> carpeta actual
