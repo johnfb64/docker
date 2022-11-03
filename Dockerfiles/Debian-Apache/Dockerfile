@@ -1,5 +1,5 @@
 #Esto descarga la ultima version de imagen de debian
-FROM debian:latest
+FROM apache:latest
 #Cada RUN es una capa, aqui se ejecutan dos instalaciones en una misma capa. 
 # -y es para que a todo le diga SI. 
 RUN apt update && apt install -y httpd
