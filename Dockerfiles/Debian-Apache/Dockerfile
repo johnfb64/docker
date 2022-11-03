@@ -9,4 +9,4 @@ WORKDIR /var/www/html
 COPY index.html . 
 # declara un comando que se va a ejecutar
 # Esta linea a continuación ejecutara un comando propio de apache. 
-CMD ["/usr/sbin/apache2ctl","-D","FOREGROUND"]
+CMD ["/usr/sbin/apache2ctl","-DFOREGROUND"]
