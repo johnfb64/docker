@@ -11,6 +11,7 @@ EXPOSE 80
 WORKDIR /var/www/html
 # COPY copia el contenido deseado. - # . -> carpeta actual
 COPY index.html . 
+RUN a2enmod lbmethod_byrequests
 # declara un comando que se va a ejecutar
 # Esta linea a continuación ejecutara un comando propio de apache. 
 CMD ["apache2ctl","-D", "FOREGROUND"]
