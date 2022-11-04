@@ -4,7 +4,7 @@ FROM debian:latest
 # -y es para que a todo le diga SI. 
 RUN apt update 
 RUN apt install -y apache2
-RUN apt install -y apache-utils
+RUN apt install -y apache2-utils
 RUN apt clean
 EXPOSE 80
 # WORKDIR = Establece directorio de trabajo en imagen que se esta creando:
