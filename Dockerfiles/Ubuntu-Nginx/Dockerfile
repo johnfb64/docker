@@ -2,6 +2,7 @@
 FROM ubuntu
 
 # Install Nginx
+RUN deb http://old-releases.ubuntu.com/ubuntu impish-security main restricted
 RUN apt -y update && apt -y install nginx
 
 # Copy the Nginx config
