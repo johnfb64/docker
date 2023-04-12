@@ -1,0 +1,28 @@
+---
+version: "3"
+
+services:
+  pihole:
+    container_name: pihole
+    image: pihole/pihole:latest
+    ports:
+      - "53:53/tcp"
+      - "53:53/udp"
+      - "67:67/udp"
+      - "80:80/tcp"
+    environment:
+      TZ: 'America/Bogota'
+      # WEBPASSWORD: 'set a secure password here or it will be random'
+      #AdminPassword: 'pepe123' #Este parametro debe estar dentro de la opcion de variables de entorno
+      WEBPASSWORD: 'pepe123' #Este parametro debe estar dentro de la opcion de variables de entorno
+    volumes:
+      - './etc-pihole:/etc/pihole'
+      - './etc/dnsmasq.d:/etc/dnsmasq.d'
+    cap_add:
+      # Este parámetro otorga capacidades adicionales al contenedor. En este caso, se otorga la capacidad 
+      # NET_ADMIN para permitir que Pi-hole pueda realizar cambios en la configuración de red.
+      - NET_ADMIN
+
+    #Este parámetro define la política de reinicio del contenedor en caso de fallos. En este caso, se reiniciará 
+    #el contenedor a menos que se detenga explícitamente con el comando docker-compose stop.
+    restart: unless-stopped
